@@ -1,0 +1,23 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+    <div class="container">
+        <a href="" class="navbar-brand btn btn-primary">
+            projeto blog
+        </a>
+    
+        <ul class="navbar-nav">
+
+            <% categories.forEach(category => { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/category/<%=category.slug%>"><%= category.title %></a>
+                </li>
+            <% }); %>
+                
+            
+
+            <li class="nav-item">
+                <a class="nav-link" href="/">HOME</a>
+            </li>
+        </ul>
+    </div>
+    
+</nav>

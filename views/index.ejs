@@ -1,0 +1,41 @@
+<%- include("./partials/header.ejs") %>
+<body>
+    <%- include("./partials/homenavbar.ejs") %>
+
+    <hr>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Bem vindo</h1>
+            <p class="lead">este é um simples blog feito com node js e my sql</p>
+            <hr class="my-4">
+            <p>ele utiliza express, sequelize para conexão e operação no banco de dados, bibliotecas como bootstrap e  tinyMCE para visual e editor de texto dos artigos
+            </p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Saiba Mais</a>
+            </p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <% articles.forEach( article => { %>
+            <div class="card">
+                <div class="card-header">
+                    <h2><%= article.title %></h2>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-success" href="/<%= article.slug %>">Ler artigo</a>
+                </div>
+            </div>
+            <br>
+            
+        <%}); %>
+
+        <div class="row">
+            <hr>
+            <a href="/articles/page/2" class="btn btn-primary">Next >></a>
+            <hr>
+        </div>
+    </div>
+</body>
+
+<%- include("./partials/footer.ejs") %>
